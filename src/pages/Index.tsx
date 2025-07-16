@@ -138,23 +138,6 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="rustic-card rounded-2xl p-8 border-2 border-accent/30">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2 drop-shadow-sm">₹5,502+</div>
-                <p className="text-sm text-muted-foreground mb-6">Monthly income increase potential for rural families</p>
-                
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-primary drop-shadow-sm">50+</div>
-                    <p className="text-xs text-muted-foreground">Villages targeted</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary drop-shadow-sm">100%</div>
-                    <p className="text-xs text-muted-foreground">Authentic experiences</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
