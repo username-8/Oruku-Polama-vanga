@@ -85,59 +85,156 @@ const Index = () => {
       {/* About Section */}
       <section className="py-20 px-4 bg-card">
         <div className="container mx-auto relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-6xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary">
               Bridging Urban & Rural Tamil Nadu
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed mb-8">
               Oruku Polama transforms rural homes into premium agri-tourism destinations, 
               offering city dwellers authentic village experiences while creating sustainable 
               income streams for farming communities across Tamil Nadu.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="bg-primary/10 rounded-lg p-3">
-                  <Award className="h-6 w-6 text-primary" />
+            
+            {/* Problem Statement Section */}
+            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-primary/20">
+              <h3 className="text-2xl font-bold text-primary mb-4">The Challenge We Address</h3>
+              <div className="grid md:grid-cols-2 gap-8 text-left">
+                <div>
+                  <h4 className="text-lg font-semibold mb-3 text-primary">Rural Communities Face:</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      Limited diversified income streams with farmers earning below ₹5,502 per month
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      Lack of structured, quality-controlled infrastructure to access growing tourism markets
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      Rich agricultural heritage and cultural traditions underutilized economically
+                    </li>
+                  </ul>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Premium Quality Standards</h3>
-                  <p className="text-muted-foreground">
-                    Our architectural consultants ensure every host home meets high comfort and safety standards 
-                    while preserving authentic village charm.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="bg-primary/10 rounded-lg p-3">
-                  <Coffee className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Curated Experiences</h3>
-                  <p className="text-muted-foreground">
-                    From farm-to-table meals to traditional games and cultural activities, 
-                    every experience is thoughtfully designed and professionally managed.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="bg-primary/10 rounded-lg p-3">
-                  <Star className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Economic Empowerment</h3>
-                  <p className="text-muted-foreground">
-                    We integrate local Self-Help Groups and micro-entrepreneurs, 
-                    ensuring tourism revenue directly benefits the entire village community.
-                  </p>
+                  <h4 className="text-lg font-semibold mb-3 text-primary">Urban Travelers Struggle With:</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      Finding authentic, high-quality rural getaways for genuine cultural immersion
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      IT professionals from India's 5.4 million-strong sector seeking unique stress-reduction experiences
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      Families wanting meaningful domestic alternatives to international travel
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
+            
+            {/* Mission Statement */}
+            <div className="bg-primary/5 rounded-2xl p-8 mb-12 border border-primary/20">
+              <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                To empower rural communities in Tamil Nadu by transforming their homes and farms into meticulously curated, 
+                high-quality agri-tourism destinations. We provide expert architectural consultation and direct on-site setup 
+                for hospitality, meals, and activities, fostering economic growth, preserving cultural heritage, and creating 
+                a direct bridge for meaningful connection between urban and rural life. We support local micro-entrepreneurs 
+                by integrating their products into our guest offerings, tapping into India's experiential travel market 
+                projected to reach <strong className="text-primary">USD 45 billion by 2027</strong>.
+              </p>
+            </div>
+            
+            {/* Vision Statement */}
+            <div className="bg-accent/10 rounded-2xl p-8 mb-12 border border-accent/30">
+              <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                To be the leading and most trusted platform for authentic village agri-tourism in Tamil Nadu, 
+                recognized globally for setting the standard in sustainable rural development and cultural exchange. 
+                We envision a future where vibrant village economies thrive through responsible tourism, significantly 
+                augmenting rural incomes and empowering local entrepreneurs, while every traveler—from corporate teams 
+                to families seeking genuine connection—discovers a deeper appreciation for the beauty, wisdom, and 
+                sustainable practices of rural life.
+              </p>
+            </div>
+          </div>
 
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <div className="space-y-6">
+              <div className="bg-card rounded-xl p-6 border border-primary/20 hover:border-primary/40 transition-colors">
+                <div className="bg-primary/10 rounded-lg p-3 w-fit mb-4">
+                  <Award className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-primary">Architectural Excellence</h3>
+                <p className="text-muted-foreground">
+                  Professional renovation services and expert consultants ensure every host home meets premium 
+                  comfort and safety standards while preserving authentic village charm and character.
+                </p>
+              </div>
+              
+              <div className="bg-card rounded-xl p-6 border border-primary/20 hover:border-primary/40 transition-colors">
+                <div className="bg-primary/10 rounded-lg p-3 w-fit mb-4">
+                  <Coffee className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-primary">Curated Experiences</h3>
+                <p className="text-muted-foreground">
+                  From farm-to-table meals and traditional games to cultural activities and hands-on farming, 
+                  every experience is thoughtfully designed and professionally managed for authenticity.
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="bg-card rounded-xl p-6 border border-primary/20 hover:border-primary/40 transition-colors">
+                <div className="bg-primary/10 rounded-lg p-3 w-fit mb-4">
+                  <Star className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-primary">Economic Empowerment</h3>
+                <p className="text-muted-foreground">
+                  We integrate local Self-Help Groups and micro-entrepreneurs, ensuring tourism revenue 
+                  directly benefits entire village communities and creates sustainable livelihood opportunities.
+                </p>
+              </div>
+              
+              <div className="bg-card rounded-xl p-6 border border-primary/20 hover:border-primary/40 transition-colors">
+                <div className="bg-primary/10 rounded-lg p-3 w-fit mb-4">
+                  <Users className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-primary">Corporate Solutions</h3>
+                <p className="text-muted-foreground">
+                  Specialized team-building and stress-reduction experiences for IT professionals and corporate 
+                  groups seeking meaningful alternatives to conventional retreat destinations.
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="bg-card rounded-xl p-6 border border-primary/20 hover:border-primary/40 transition-colors">
+                <div className="bg-primary/10 rounded-lg p-3 w-fit mb-4">
+                  <Leaf className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-primary">Sustainable Tourism</h3>
+                <p className="text-muted-foreground">
+                  Responsible travel practices that preserve cultural heritage, protect natural environments, 
+                  and ensure long-term benefits for rural communities and their traditions.
+                </p>
+              </div>
+              
+              <div className="bg-card rounded-xl p-6 border border-primary/20 hover:border-primary/40 transition-colors">
+                <div className="bg-primary/10 rounded-lg p-3 w-fit mb-4">
+                  <Heart className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-primary">Cultural Bridge</h3>
+                <p className="text-muted-foreground">
+                  Creating meaningful connections between urban and rural India through authentic cultural 
+                  exchange, storytelling, and shared experiences that foster mutual understanding.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
