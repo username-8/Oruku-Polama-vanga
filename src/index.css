@@ -124,15 +124,30 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 
-  /* Rustic texture classes */
-  .bg-soil-texture {
-    background-image: var(--soil-texture);
-    background-size: 40px 40px;
+  /* Red soil texture for specific sections */
+  .bg-red-soil {
+    background-image: url('/src/assets/red-soil-texture.jpg');
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    position: relative;
   }
   
-  .bg-grain-texture {
-    background-image: var(--grain-texture);
-    background-size: 60px 60px;
+  .bg-red-soil::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, hsl(15 35% 25% / 0.4) 0%, hsl(25 45% 35% / 0.3) 100%);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .bg-red-soil > * {
+    position: relative;
+    z-index: 2;
   }
   
   .bg-village-hero {
@@ -168,21 +183,12 @@ All colors MUST be HSL.
     text-shadow: 0 1px 2px hsl(15 25% 15% / 0.3);
   }
   
-  .texture-overlay {
-    position: relative;
-  }
-  
-  .texture-overlay::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: var(--grain-texture);
-    background-size: 60px 60px;
-    opacity: 0.3;
-    pointer-events: none;
-    z-index: 1;
+  /* Text shadow effect for content on soil */
+  .soil-text {
+    text-shadow: 
+      0 1px 2px hsl(15 25% 15% / 0.6),
+      0 2px 4px hsl(15 35% 25% / 0.4),
+      0 0 8px hsl(25 45% 35% / 0.3);
+    font-weight: 600;
   }
 }

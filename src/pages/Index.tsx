@@ -20,7 +20,7 @@ import villagePanorama from "@/assets/village-panorama.jpg";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-subtle bg-soil-texture">
+    <div className="min-h-screen bg-gradient-subtle">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
         <div className="absolute inset-0 village-panorama-loop opacity-40"></div>
@@ -88,7 +88,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4 bg-card texture-overlay bg-grain-texture">
+      <section className="py-20 px-4 bg-card">
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary">
@@ -165,7 +165,7 @@ const Index = () => {
       </section>
 
       {/* Highlights Section */}
-      <section className="py-20 px-4 bg-soil-texture">
+      <section className="py-20 px-4 bg-gradient-subtle">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary">
@@ -260,13 +260,13 @@ const Index = () => {
       </section>
 
       {/* Waitlist Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/5 to-accent/10 texture-overlay bg-grain-texture">
+      <section className="py-20 px-4 bg-red-soil">
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary soil-text">
               Join Our Community
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground soil-text">
               Be among the first to experience authentic Tamil Nadu village tourism. 
               Whether you're seeking adventure or wanting to share your home, we'd love to connect.
             </p>
@@ -277,7 +277,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-12 px-4 texture-overlay bg-soil-texture">
+      <footer className="bg-primary text-primary-foreground py-12 px-4">
         <div className="container mx-auto relative z-10">
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4">Oruku Polama</h3>
