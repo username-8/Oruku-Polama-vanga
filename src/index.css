@@ -8,41 +8,46 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Oruku Polama - Rural & Nature Theme */
-    --background: 45 20% 97%;
-    --foreground: 120 15% 15%;
+    /* Oruku Polama - Rustic Village Theme with Red Soil Textures */
+    --background: 30 25% 96%;
+    --foreground: 25 45% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 120 15% 15%;
+    --card: 35 15% 98%;
+    --card-foreground: 25 45% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 120 15% 15%;
+    --popover: 35 15% 98%;
+    --popover-foreground: 25 45% 15%;
 
-    /* Earth tones for primary - rich forest green */
-    --primary: 120 45% 25%;
-    --primary-foreground: 45 20% 97%;
+    /* Rich terracotta and earth tones for primary */
+    --primary: 15 55% 35%;
+    --primary-foreground: 35 25% 95%;
 
-    /* Warm earth secondary */
-    --secondary: 35 25% 88%;
-    --secondary-foreground: 120 15% 15%;
+    /* Warm clay secondary */
+    --secondary: 25 35% 85%;
+    --secondary-foreground: 25 45% 15%;
 
-    --muted: 45 15% 92%;
-    --muted-foreground: 120 10% 45%;
+    --muted: 30 20% 90%;
+    --muted-foreground: 25 25% 45%;
 
-    /* Golden accent for highlights */
-    --accent: 45 85% 70%;
-    --accent-foreground: 120 15% 15%;
+    /* Golden wheat accent for highlights */
+    --accent: 40 75% 65%;
+    --accent-foreground: 25 45% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 45 15% 85%;
-    --input: 45 15% 85%;
-    --ring: 120 45% 25%;
+    --border: 30 20% 82%;
+    --input: 30 20% 85%;
+    --ring: 15 55% 35%;
 
-    /* Gradient for hero section */
-    --gradient-hero: linear-gradient(135deg, hsl(120 45% 25%), hsl(85 40% 35%));
-    --gradient-subtle: linear-gradient(180deg, hsl(45 25% 95%), hsl(45 20% 97%));
+    /* Rustic gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(15 55% 35%) 0%, hsl(25 45% 45%) 50%, hsl(35 40% 55%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(30 25% 94%) 0%, hsl(35 20% 96%) 100%);
+    --gradient-earth: linear-gradient(45deg, hsl(15 60% 25%) 0%, hsl(25 50% 35%) 100%);
+    
+    /* Texture overlays */
+    --soil-texture: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23B45B3E' fill-opacity='0.08'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20s-20-8.954-20-20 8.954-20 20-20 20 8.954 20 20zm-5 0c0-8.284-6.716-15-15-15s-15 6.716-15 15 6.716 15 15 15 15-6.716 15-15z'/%3E%3C/g%3E%3C/svg%3E");
+    --grain-texture: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A0522D' fill-opacity='0.05'%3E%3Ccircle cx='7' cy='7' r='2'/%3E%3Ccircle cx='30' cy='20' r='1.5'/%3E%3Ccircle cx='45' cy='35' r='2'/%3E%3Ccircle cx='15' cy='45' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 
     --radius: 0.75rem;
 
@@ -64,37 +69,41 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark mode - earth tones */
-    --background: 120 15% 8%;
-    --foreground: 45 20% 95%;
+    /* Dark mode - rustic earth tones */
+    --background: 25 20% 8%;
+    --foreground: 35 25% 95%;
 
-    --card: 120 15% 12%;
-    --card-foreground: 45 20% 95%;
+    --card: 25 25% 12%;
+    --card-foreground: 35 25% 95%;
 
-    --popover: 120 15% 12%;
-    --popover-foreground: 45 20% 95%;
+    --popover: 25 25% 12%;
+    --popover-foreground: 35 25% 95%;
 
-    --primary: 120 35% 65%;
-    --primary-foreground: 120 15% 8%;
+    --primary: 25 45% 65%;
+    --primary-foreground: 25 20% 8%;
 
-    --secondary: 120 10% 18%;
-    --secondary-foreground: 45 20% 95%;
+    --secondary: 25 15% 18%;
+    --secondary-foreground: 35 25% 95%;
 
-    --muted: 120 10% 18%;
-    --muted-foreground: 45 10% 65%;
+    --muted: 25 15% 18%;
+    --muted-foreground: 35 15% 65%;
 
-    --accent: 45 75% 60%;
-    --accent-foreground: 120 15% 8%;
+    --accent: 40 65% 60%;
+    --accent-foreground: 25 20% 8%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 120 10% 18%;
-    --input: 120 10% 18%;
-    --ring: 120 35% 65%;
+    --border: 25 15% 18%;
+    --input: 25 15% 18%;
+    --ring: 25 45% 65%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(120 25% 15%), hsl(85 20% 20%));
-    --gradient-subtle: linear-gradient(180deg, hsl(120 15% 10%), hsl(120 15% 8%));
+    --gradient-hero: linear-gradient(135deg, hsl(15 35% 15%) 0%, hsl(25 25% 20%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(25 20% 10%) 0%, hsl(25 20% 8%) 100%);
+    --gradient-earth: linear-gradient(45deg, hsl(15 40% 15%) 0%, hsl(25 30% 20%) 100%);
+    
+    --soil-texture: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D2691E' fill-opacity='0.06'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20s-20-8.954-20-20 8.954-20 20-20 20 8.954 20 20zm-5 0c0-8.284-6.716-15-15-15s-15 6.716-15 15 6.716 15 15 15 15-6.716 15-15z'/%3E%3C/g%3E%3C/svg%3E");
+    --grain-texture: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23CD853F' fill-opacity='0.04'%3E%3Ccircle cx='7' cy='7' r='2'/%3E%3Ccircle cx='30' cy='20' r='1.5'/%3E%3Ccircle cx='45' cy='35' r='2'/%3E%3Ccircle cx='15' cy='45' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -115,7 +124,65 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 
-  .bg-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.05'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  /* Rustic texture classes */
+  .bg-soil-texture {
+    background-image: var(--soil-texture);
+    background-size: 40px 40px;
+  }
+  
+  .bg-grain-texture {
+    background-image: var(--grain-texture);
+    background-size: 60px 60px;
+  }
+  
+  .bg-village-hero {
+    background-image: url('/src/assets/village-panorama.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  .village-panorama-loop {
+    background-image: url('/src/assets/village-panorama.jpg');
+    background-size: 200% 100%;
+    background-repeat: repeat-x;
+    animation: panorama-scroll 60s linear infinite;
+  }
+  
+  @keyframes panorama-scroll {
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  .rustic-card {
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(35 20% 96%) 100%);
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 4px 12px hsl(15 25% 15% / 0.1), inset 0 1px 0 hsl(40 40% 85% / 0.5);
+  }
+  
+  .rustic-button {
+    background: var(--gradient-earth);
+    border: 1px solid hsl(15 40% 30%);
+    box-shadow: 0 2px 8px hsl(15 25% 15% / 0.2), inset 0 1px 0 hsl(25 50% 50% / 0.3);
+    text-shadow: 0 1px 2px hsl(15 25% 15% / 0.3);
+  }
+  
+  .texture-overlay {
+    position: relative;
+  }
+  
+  .texture-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--grain-texture);
+    background-size: 60px 60px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
   }
 }
