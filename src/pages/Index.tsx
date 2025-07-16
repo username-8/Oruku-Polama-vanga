@@ -263,10 +263,10 @@ const Index = () => {
       <section className="py-20 px-4 bg-red-soil">
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary soil-text">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 soil-text-strong">
               Join Our Community
             </h2>
-            <p className="text-lg text-muted-foreground soil-text">
+            <p className="text-lg soil-text">
               Be among the first to experience authentic Tamil Nadu village tourism. 
               Whether you're seeking adventure or wanting to share your home, we'd love to connect.
             </p>
