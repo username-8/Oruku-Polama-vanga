@@ -31,9 +31,13 @@ const Index = () => {
               Authentic Village Tourism in Tamil Nadu
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-primary leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-primary leading-tight">
               Oruku Polama
             </h1>
+            
+            <p className="text-lg md:text-xl text-primary/80 mb-6 italic font-medium">
+              foot in mud & harts in homes: a road to roots to sow sustainability
+            </p>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
               Experience authentic village life, sustainable farming, and Tamil Nadu's rich heritage 
