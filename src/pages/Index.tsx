@@ -29,11 +29,6 @@ const Index = () => {
         
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm font-medium bg-primary/10 border-primary/20 text-primary backdrop-blur-sm">
-              <TreePine className="w-4 h-4 mr-2" />
-              Authentic Village Tourism in Tamil Nadu
-            </Badge>
-            
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-primary leading-tight drop-shadow-lg">
               Oruku Polama
             </h1>
