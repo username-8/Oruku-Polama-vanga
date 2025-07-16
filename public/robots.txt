@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://yourusername.github.io/oruku-polama/sitemap.xml
