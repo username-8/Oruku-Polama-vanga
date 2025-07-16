@@ -126,7 +126,7 @@ All colors MUST be HSL.
 
   /* Red soil texture for specific sections */
   .bg-red-soil {
-    background-image: url('/src/assets/red-soil-texture.jpg');
+    background-image: url('./assets/red-soil-texture.jpg');
     background-size: 400px 400px;
     background-repeat: repeat;
     position: relative;
@@ -151,7 +151,7 @@ All colors MUST be HSL.
   }
   
   .bg-village-hero {
-    background-image: url('/src/assets/village-panorama.jpg');
+    background-image: url('./assets/village-panorama.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -159,7 +159,7 @@ All colors MUST be HSL.
   }
   
   .village-panorama-loop {
-    background-image: url('/src/assets/village-panorama.jpg');
+    background-image: url('./assets/village-panorama.jpg');
     background-size: 200% 100%;
     background-repeat: repeat-x;
     animation: panorama-scroll 60s linear infinite;
