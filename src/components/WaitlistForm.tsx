@@ -5,8 +5,8 @@ export function WaitlistForm() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-primary mb-4">Join Our Waitlist</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold soil-text-strong mb-4">Join Our Waitlist</h2>
+        <p className="text-lg soil-text max-w-2xl mx-auto">
           Be the first to experience authentic Tamil Nadu village life or share your heritage with travelers
         </p>
       </div>
