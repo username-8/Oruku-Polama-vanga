@@ -10,19 +10,29 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, Users } from "lucide-react";
+import { SECURITY_CONFIG, sanitizeInput, rateLimiter, secureApiCall } from "@/config/security";
 
 const guestFormSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  location: z.string().min(2, "Please enter your location"),
-  message: z.string().optional(),
+  name: z.string()
+    .min(2, "Name must be at least 2 characters")
+    .max(SECURITY_CONFIG.INPUT_LIMITS.MAX_NAME_LENGTH, "Name is too long")
+    .regex(/^[a-zA-Z\s.'-]+$/, "Name contains invalid characters"),
+  email: z.string()
+    .email("Please enter a valid email")
+    .max(SECURITY_CONFIG.INPUT_LIMITS.MAX_EMAIL_LENGTH, "Email is too long"),
+  phone: z.string()
+    .min(10, "Please enter a valid phone number")
+    .max(SECURITY_CONFIG.INPUT_LIMITS.MAX_PHONE_LENGTH, "Phone number is too long")
+    .regex(/^[\+]?[0-9\s\-\(\)]+$/, "Please enter a valid phone number"),
+  location: z.string()
+    .min(2, "Please enter your location")
+    .max(SECURITY_CONFIG.INPUT_LIMITS.MAX_LOCATION_LENGTH, "Location is too long"),
+  message: z.string()
+    .max(SECURITY_CONFIG.INPUT_LIMITS.MAX_MESSAGE_LENGTH, "Message is too long")
+    .optional(),
 });
 
 type GuestFormData = z.infer<typeof guestFormSchema>;
-
-// Google Apps Script Web App URL - Replace with your actual URL
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
 
 export function GuestForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,20 +53,37 @@ export function GuestForm() {
     setIsSubmitting(true);
     
     try {
+      // Rate limiting check
+      const userIdentifier = `${data.email}-guest`;
+      if (!rateLimiter.isAllowed(userIdentifier)) {
+        toast({
+          title: "Too Many Requests",
+          description: "Please wait a moment before submitting again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Input sanitization
+      const sanitizedData = {
+        name: sanitizeInput(data.name),
+        email: sanitizeInput(data.email),
+        phone: sanitizeInput(data.phone),
+        location: sanitizeInput(data.location),
+        message: data.message ? sanitizeInput(data.message) : "",
+      };
+
       const formData = new FormData();
       formData.append("userType", "guest");
-      formData.append("name", data.name);
-      formData.append("email", data.email);
-      formData.append("phone", data.phone);
-      formData.append("location", data.location);
-      formData.append("message", data.message || "");
+      formData.append("name", sanitizedData.name);
+      formData.append("email", sanitizedData.email);
+      formData.append("phone", sanitizedData.phone);
+      formData.append("location", sanitizedData.location);
+      formData.append("message", sanitizedData.message);
       formData.append("timestamp", new Date().toISOString());
 
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        body: formData,
-        mode: "no-cors",
-      });
+      // Secure API call with timeout
+      await secureApiCall(SECURITY_CONFIG.GOOGLE_SCRIPT_URL, formData);
 
       toast({
         title: "Welcome to the journey! 🌾",
@@ -66,9 +93,19 @@ export function GuestForm() {
       form.reset();
     } catch (error) {
       console.error("Error submitting form:", error);
+      
+      let errorMessage = "There was a problem submitting your information. Please try again.";
+      if (error instanceof Error) {
+        if (error.message.includes('timeout')) {
+          errorMessage = "Request timed out. Please check your connection and try again.";
+        } else if (error.message.includes('network')) {
+          errorMessage = "Network error. Please check your internet connection.";
+        }
+      }
+      
       toast({
         title: "Submission Error",
-        description: "There was a problem submitting your information. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
