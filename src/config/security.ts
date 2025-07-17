@@ -1,7 +1,7 @@
 // Security configuration and utilities
 export const SECURITY_CONFIG = {
   // API endpoint - can be configured via environment variables
-  GOOGLE_SCRIPT_URL: import.meta.env.VITE_GOOGLE_SCRIPT_URL || "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
+  GOOGLE_SCRIPT_URL: import.meta.env.VITE_GOOGLE_SCRIPT_URL || "https://script.google.com/macros/s/AKfycbwA9-P4CPeZkhRFb_O9FbltQUJy2wk4b_jVFeFQfTv8I1NL2HTmfoO5G4zZ_T4gLxpHWQ/exec",
   
   // Rate limiting
   RATE_LIMIT: {
