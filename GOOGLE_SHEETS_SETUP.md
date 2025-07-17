@@ -1,5 +1,9 @@
 # Google Sheets Integration Setup for Oruku Polama Waitlist
 
+## Overview
+
+The Oruku Polama waitlist forms (Guest and Host forms) are configured to submit data securely to Google Sheets. The application uses environment variables and built-in security features including input sanitization, rate limiting, and secure API calls.
+
 ## Step 1: Create a Google Sheet
 
 1. Go to [Google Sheets](https://sheets.google.com)
@@ -7,7 +11,7 @@
 3. Name it "Oruku Polama Waitlist"
 4. Set up the following column headers in row 1:
    - A1: `Timestamp`
-   - B1: `User Type`
+   - B1: `User Type` (will be "guest" or "host")
    - C1: `Name`
    - D1: `Email`
    - E1: `Phone`
@@ -81,14 +85,31 @@ function doGet(e) {
 5. Click `Deploy`
 6. **Copy the Web app URL** - you'll need this for the next step
 
-## Step 4: Update the React Component
+## Step 4: Configure the Google Script URL
 
-1. Open `src/components/WaitlistForm.tsx`
-2. Find this line:
-   ```typescript
-   const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+The application now uses environment variables for configuration. You have two options:
+
+### Option A: Local Development (Recommended for testing)
+1. Create a `.env.local` file in your project root (if it doesn't exist)
+2. Add the following line:
    ```
-3. Replace `YOUR_SCRIPT_ID` with the actual URL you copied from step 3
+   VITE_GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
+   ```
+3. Replace `YOUR_SCRIPT_ID` with the actual script ID from step 3
+
+### Option B: Production Deployment
+1. In your hosting platform (Vercel, Netlify, etc.), add an environment variable:
+   - Variable name: `VITE_GOOGLE_SCRIPT_URL`
+   - Variable value: `https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec`
+
+### Option C: Fallback Configuration
+If you prefer not to use environment variables, you can directly update the URL in:
+1. Open `src/config/security.ts`
+2. Find this line (around line 4):
+   ```typescript
+   GOOGLE_SCRIPT_URL: import.meta.env.VITE_GOOGLE_SCRIPT_URL || "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
+   ```
+3. Replace `YOUR_SCRIPT_ID` with your actual script ID
 
 ## Step 5: Test the Integration
 
@@ -96,18 +117,38 @@ function doGet(e) {
 2. Check your Google Sheet to see if the data appears
 3. If there are issues, check the Apps Script logs: `Executions` tab in Apps Script
 
+## Security Features
+
+The Oruku Polama waitlist forms include several built-in security features:
+
+### Built-in Security Features
+- **Input Sanitization**: All user inputs are automatically sanitized to prevent XSS attacks
+- **Rate Limiting**: Users are limited to 5 submissions per minute to prevent spam
+- **Form Validation**: Comprehensive validation using Zod schemas with proper regex patterns
+- **Secure API Calls**: 10-second timeout and proper error handling
+- **CORS Protection**: Uses `no-cors` mode for secure cross-origin requests
+
+### Data Flow
+1. User fills out either Guest or Host form
+2. Data is validated and sanitized on the frontend
+3. Rate limiting checks prevent abuse
+4. Secure API call submits data to Google Sheets
+5. User receives confirmation toast message
+
 ## Important Notes
 
-- The form uses `no-cors` mode, so we can't read the response directly
-- Data should appear in your Google Sheet within a few seconds
-- Make sure your Google Sheet is accessible (not restricted to specific users)
-- The script will automatically handle new submissions and append them to the sheet
+- **Two Form Types**: The app has separate Guest and Host forms, both submit to the same Google Sheet with a "userType" field
+- **No Direct Response Reading**: The form uses `no-cors` mode for security, so success is assumed if no error occurs
+- **Automatic Timestamps**: Each submission includes an ISO timestamp
+- **Data should appear in your Google Sheet within a few seconds**
+- **Make sure your Google Sheet is accessible** (not restricted to specific users)
 
-## Security Considerations
+## Additional Security Considerations
 
-- The web app is set to "Anyone" access for simplicity
-- For production, consider implementing basic validation in the Apps Script
-- Monitor your sheet for spam submissions and implement rate limiting if needed
+- The Google Apps Script is set to "Anyone" access for functionality
+- Input validation happens both on frontend (React/Zod) and can be added to the Google Apps Script
+- Rate limiting prevents spam but monitor your sheet for unusual activity
+- Consider adding additional validation in your Google Apps Script for production use
 
 ## Troubleshooting
 
