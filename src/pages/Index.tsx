@@ -375,20 +375,20 @@ const Index = () => {
             <div className="flex justify-center space-x-6 mb-8">
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span className="text-sm">contact@orukupolama.com</span>
+                <span className="text-sm">contact@orukupolama.com</span> <br></br>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span className="text-sm">+91 XXXXX XXXXX</span>
+                <span className="text-sm">+91 XXXXX XXXXX</span>  <br></br>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span className="text-sm">Tamil Nadu, India</span>
+                <span className="text-sm">Tamil Nadu, India</span>  <br></br>
               </div>
             </div>
             
             <div className="text-center text-primary-foreground/60 text-sm">
-              <p>&copy; 2024 Oruku Polama. Empowering rural communities through sustainable tourism.</p>
+              <p>&copy; 2025 Oruku Polama. Empowering rural communities through sustainable tourism. <br></br> all content on this page belong to "Oruku Polama" & it's owners. </p>
             </div>
           </div>
         </div>
