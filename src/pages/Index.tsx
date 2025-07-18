@@ -19,7 +19,7 @@ import {
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-subtle">
+    <div className="min-h-screen bg-gradient-to-b from-background via-secondary/20 to-background">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
         <div className="absolute inset-0 village-panorama-loop opacity-40"></div>
@@ -42,7 +42,7 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button size="lg" className="rustic-button text-primary-foreground px-8 py-4 text-lg hover:shadow-lg transition-all duration-300">
+              <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-8 py-4 text-lg hover:shadow-lg transition-all duration-300 border border-primary/30">
                 Join as Guest
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -239,7 +239,7 @@ const Index = () => {
       </section>
 
       {/* Highlights Section */}
-      <section className="py-20 px-4 bg-gradient-subtle">
+      <section className="py-20 px-4 bg-gradient-to-b from-secondary/10 via-background to-secondary/10">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-primary">
@@ -252,7 +252,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="rustic-card hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Card className="bg-gradient-to-br from-card to-secondary/20 border border-primary/20 hover:border-primary/40 hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-6 text-center">
                 <div className="bg-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border-2 border-primary/30">
                   <Home className="h-8 w-8 text-primary" />
@@ -265,7 +265,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="rustic-card hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Card className="bg-gradient-to-br from-card to-secondary/20 border border-primary/20 hover:border-primary/40 hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-6 text-center">
                 <div className="bg-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border-2 border-primary/30">
                   <TreePine className="h-8 w-8 text-primary" />
@@ -278,7 +278,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="rustic-card hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Card className="bg-gradient-to-br from-card to-secondary/20 border border-primary/20 hover:border-primary/40 hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-6 text-center">
                 <div className="bg-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border-2 border-primary/30">
                   <Users className="h-8 w-8 text-primary" />
@@ -291,7 +291,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="rustic-card hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Card className="bg-gradient-to-br from-card to-secondary/20 border border-primary/20 hover:border-primary/40 hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-6 text-center">
                 <div className="bg-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border-2 border-primary/30">
                   <Heart className="h-8 w-8 text-primary" />
@@ -304,7 +304,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="rustic-card hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Card className="bg-gradient-to-br from-card to-secondary/20 border border-primary/20 hover:border-primary/40 hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-6 text-center">
                 <div className="bg-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border-2 border-primary/30">
                   <Leaf className="h-8 w-8 text-primary" />
@@ -317,7 +317,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="rustic-card hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Card className="bg-gradient-to-br from-card to-secondary/20 border border-primary/20 hover:border-primary/40 hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-6 text-center">
                 <div className="bg-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border-2 border-primary/30">
                   <Award className="h-8 w-8 text-primary" />
