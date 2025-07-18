@@ -18,6 +18,10 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  const scrollToWaitlist = () => {
+    document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-secondary/20 to-background">
       {/* Hero Section */}
@@ -42,11 +46,20 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-8 py-4 text-lg hover:shadow-lg transition-all duration-300 border border-primary/30">
+              <Button 
+                size="lg" 
+                onClick={scrollToWaitlist}
+                className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground px-8 py-4 text-lg hover:shadow-lg transition-all duration-300 border border-primary/30"
+              >
                 Join as Guest
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-primary/60 text-primary hover:bg-primary/90 hover:text-primary-foreground px-8 py-4 text-lg backdrop-blur-sm bg-background/40 hover:shadow-lg transition-all duration-300">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                onClick={scrollToWaitlist}
+                className="border-primary/60 text-primary hover:bg-primary/90 hover:text-primary-foreground px-8 py-4 text-lg backdrop-blur-sm bg-background/40 hover:shadow-lg transition-all duration-300"
+              >
                 Become a Host
                 <Home className="ml-2 h-5 w-5" />
               </Button>
@@ -334,7 +347,7 @@ const Index = () => {
       </section>
 
       {/* Waitlist Section */}
-      <section className="py-20 px-4 bg-red-soil">
+      <section id="waitlist" className="py-20 px-4 bg-red-soil">
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 soil-text-strong">
