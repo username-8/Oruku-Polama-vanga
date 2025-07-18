@@ -68,7 +68,6 @@ export async function secureApiCall(
     const response = await fetch(url, {
       method: "POST",
       body: data,
-      mode: "no-cors",
       signal: controller.signal,
       // Security headers
       headers: {
@@ -76,6 +75,11 @@ export async function secureApiCall(
         'Pragma': 'no-cache',
       },
     });
+    
+    // Check if the response is ok
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     
     clearTimeout(timeoutId);
     return response;
