@@ -68,6 +68,7 @@ export async function secureApiCall(
     const response = await fetch(url, {
       method: "POST",
       body: data,
+      mode: "no-cors", // Google Apps Script requires no-cors mode
       signal: controller.signal,
       // Security headers
       headers: {
@@ -76,11 +77,7 @@ export async function secureApiCall(
       },
     });
     
-    // Check if the response is ok
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
+    // With no-cors, we can't check response.ok, so we assume success if no error is thrown
     clearTimeout(timeoutId);
     return response;
   } catch (error) {
