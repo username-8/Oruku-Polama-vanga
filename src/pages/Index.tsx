@@ -16,7 +16,6 @@ import {
   Award,
   Coffee
 } from "lucide-react";
-import villagePanorama from "@/assets/village-panorama.jpg";
 
 const Index = () => {
   return (
